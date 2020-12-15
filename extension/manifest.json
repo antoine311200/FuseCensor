@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "name": "Fuse Censor Extension",
+    "version": "1.0.0",
+    "description": "Censor swear words and negative content using Natural Langage Processing ",
+    "icons": {
+        "64": "resources/fuse_censor_64.png"
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage"
+    ],
+    "options_page": "options/index.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "modules/tf.min.js",
+                "content/spoiler.js",
+                "content/index.js",
+                "content/engine/preprocessing.js"
+            ],
+            "css": [
+                "content/spoiler.css"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background/index.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": "resources/fuse_censor_64.png",
+        "default_popup": "popup/index.html",
+        "default_title": "Fuse Censor Extension options"
+    },
+    "web_accessible_resources": [
+        "content/gentlemanmode.js",
+        "content/spoilermode.js",
+        "modules/jspos/lexer.js",
+        "modules/jspos/lexicon.js",
+        "modules/jspos/POSTagger.js",
+        "content/engine/process.json"
+    ]
+}

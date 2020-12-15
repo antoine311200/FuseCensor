@@ -1,0 +1,342 @@
+.wrapper {
+    margin-top: 5px;
+}
+
+.wrapper img {
+    float: left;
+}
+
+.wrapper h2 {
+    position: relative;
+    top: 5px;
+    left: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px
+}
+
+.wrapper button {
+    position : relative;
+    bottom: 30px;
+    left: 215px;
+    background-color: #ffffff00; /* transparent background */
+    border: none;
+    margin-bottom: -25px;
+}
+
+#description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* Hide default input */
+.toggle input {
+    display: none;
+}
+  
+/* The container and background */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 41px;
+    height: 24px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 5;
+    background-color: rgba(194, 192, 192, 0.74);
+    border: 1px solid #aaa;
+    border-radius: 30px;
+    transition: all 0.4s;
+}
+
+/* The sliding button */
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    left: 3px;
+    top: 1px;
+    background-color: #fff4f4;
+    border-radius: 18px;
+    transition: all 0.4s;
+}
+
+/* On checked */
+input:checked + .slider {
+    background-color: #44a5ff;
+    border-color: #0062be;
+}
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+.enable-button {
+    margin-bottom: 15px;
+}
+
+.enable-button strong {
+    float: left;
+}
+
+.enable-button label {
+    position: relative;
+    top: 0px;
+    left: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+#apply-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 15px;
+    border-radius: 12px;
+    width: 220px;
+}
+#apply-button::active {
+    border:none;
+}
+
+.block .range-slide {
+    position: relative;
+    vertical-align:middle;
+    display:inline-block;
+    left: 15px;
+    bottom: 6px;
+    // margin-bottom:1em;
+}
+.block label {
+    width: 50%;
+}
+
+@mixin rangeThumb($color) {
+    width: 18px;
+    height: 1px;
+    margin: -8px 0  0;
+    border-radius: 50%;
+    background: $color;
+    cursor: pointer;
+    border: 0 !important;
+}
+
+@mixin rangeTrack {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    background: #830000;
+}
+
+.range {
+    position: relative;
+    width: 175px;
+    height: 5px;
+}
+
+.range .active-slide {
+    position: relative;
+    width: 160px;
+    height: 4px;
+    left: 60px;
+    top: -5px;
+}
+
+.range .default-slide {
+    position: relative;
+    background-color: rgb(180, 180, 180);
+    width: 160px;
+    height: 4px;
+    left: 60px;
+    top: -0.7px;
+}
+
+
+.range input {
+    width: 100%;
+    position: absolute;
+    left: 50px;
+    top: -1.5px;
+    height: 0;
+    -webkit-appearance: none;
+}
+// Thumb
+.range input::-webkit-slider-thumb {
+    -webkit-appearance: none; // needed again for Chrome & Safari
+    @include rangeThumb(#37adbf);
+}
+
+.range input::-moz-range-thumb {
+    @include rangeThumb(#37adbf);
+}
+
+.range input::-ms-thumb {
+    @include rangeThumb(#37adbf);
+}
+
+// Track
+.range input::-webkit-slider-runnable-track {
+    @include rangeTrack;
+}
+
+.range input::-moz-range-track {
+    @include rangeTrack;
+}
+
+.range input::-ms-track {
+    @include rangeTrack;
+}
+
+.range input:focus { // override outline/background on focus
+    background: none;
+    outline: none;
+}
+
+.range input::-ms-track { // A little somethin' somethin' for IE
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+// Labels below slider
+.range-labels {
+    // margin: 18px -41px 0;
+    // padding: 0;
+    list-style: none;
+}
+
+.range-labels li {
+    position: relative;
+    float: left;
+    width: 40px;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: 8px;
+    cursor: pointer;
+    list-style: none;
+    // left: -50px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.range-labels li::before {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    content: "";
+    margin: 0 auto;
+    width: 9px;
+    height: 9px;
+    background: #b2b2b2;
+    border-radius: 50%;
+}
+.range-labels li.active {
+    color: #37adbf;
+}
+
+.range-labels li.selected::before {
+    background: #37adbf;
+}
+
+.range-labels li.active.selected::before {
+    display: none;
+}
+
+
+
+
+#dropdown {
+    z-index: 10;
+    overflow: hidden;
+
+    /*style the "box" in its minimzed state*/
+    position: absolute;
+    top: 5px;
+    left: -200px;
+    border:1px solid black; width:100px; height:18px; overflow:hidden;
+    background-color: white;
+    /*animate collapsing the dropdown from open to closed state (v. fast)*/
+    -moz-transition: height 0.1s; 
+    -webkit-transition: height 0.1s; 
+    -ms-transition: height 0.1s;  
+    -o-transition: height 0.1s;  
+    transition: height 0.1s;
+}
+#dropdown:hover {
+    /*when expanded, the dropdown will get native means of scrolling*/
+    height:25px; overflow-y:scroll;
+    /*nice and smooth expand - speed this up at your preference or remove animation altogether*/
+    -moz-transition: height 0.5s; 
+    -webkit-transition: height 0.5s; 
+    -ms-transition: height 0.5s;  
+    -o-transition: height 0.5s;  
+    transition: height 0.5s;
+    overflow: hidden;
+}
+#dropdown input {
+    position:absolute;top:0px;left:0;opacity:0;
+    overflow: hidden;
+}
+
+#dropdown label {
+    display: none;
+    margin-left:5px;
+    // margin-top: -3.2px;
+    height:25px;
+    opacity:0.2;
+    font-size: 90%;
+}
+
+#dropdown label#french {
+    text-indent: 30px;
+    background: left 2% top 25% / 25% 50% no-repeat url("../resources/french_flag.png");
+}
+
+#dropdown label#english {    
+    text-indent: 30px;
+    background: left 2% top 25% / 25% 50% no-repeat url("../resources/UK_flag.png");
+}
+
+#dropdown:hover label{
+    display:block;
+}
+
+#dropdown label:hover {
+    opacity:0.8;
+}
+
+#dropdown input:checked + label#english {
+    opacity:1 !important; display:block;
+}

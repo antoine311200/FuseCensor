@@ -1,0 +1,68 @@
+span.spoiler-default {
+    border-radius: 3px;
+    cursor: pointer;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+    transition: all 0.05s linear;
+    /* transition: all 0.2s linear; */
+}
+
+span.spoiler-default.dark {
+    background-color:rgb(51, 51, 51);
+    color:rgb(51, 51, 51);
+}
+span.spoiler-default.bright {
+    background-color:rgb(185, 185, 185);
+    color:rgb(185, 185, 185);
+}
+span.spoiler-default.red {
+    background-color:rgb(206, 65, 65);
+    color:rgb(206, 65, 65);
+}
+
+span.spoiler-default.dark:hover {
+    background-color:rgb(85, 85, 85);
+    color: rgb(85, 85, 85);
+}
+span.spoiler-default.bright:hover {
+    background-color:rgb(208, 208, 208);
+    color: rgba(208,208,208);
+}
+span.spoiler-default.red:hover {
+    background-color:rgb(236, 130, 130);
+    color: rgb(236, 130, 130);
+}
+
+span.spoiler-active {
+    
+    border-radius: 3px;
+    cursor: pointer;
+
+    transition: all 0.05s linear;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+span.spoiler-active.dark {
+    background-color:rgb(85, 85, 85);
+    color: white;
+}
+span.spoiler-active.bright {
+    background-color: rgb(208, 208, 208);
+    color: rgb(0, 0, 0);
+}
+span.spoiler-active.red {
+    background-color: rgba(236, 130, 130, 0.89);
+    color: rgb(0, 0, 0);
+}
